@@ -1,10 +1,14 @@
 language: go
-
-script: ./test.sh
-
+sudo: false
 go:
-  - 1.2
-  - 1.3
-  - 1.4
-  - 1.5
-  - 1.6
+  - 1.10.x
+  - 1.11.x
+  - 1.12.x
+  - tip
+
+os:
+  - linux
+  - osx
+
+script:
+  - ./test.sh
