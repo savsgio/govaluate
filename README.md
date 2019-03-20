@@ -1,10 +1,11 @@
 govaluate
 ====
 
-[![Build Status](https://travis-ci.org/Knetic/govaluate.svg?branch=master)](https://travis-ci.org/Knetic/govaluate)
-[![Godoc](https://img.shields.io/badge/godoc-reference-5272B4.svg)](https://godoc.org/github.com/Knetic/govaluate)
-[![Go Report Card](https://goreportcard.com/badge/github.com/Knetic/govaluate)](https://goreportcard.com/report/github.com/Knetic/govaluate) 
-[![Gocover](https://gocover.io/_badge/github.com/Knetic/govaluate)](https://gocover.io/github.com/Knetic/govaluate)
+[![Build Status](https://travis-ci.org/savsgio/govaluate.svg?branch=master)](https://travis-ci.org/savsgio/govaluate)
+[![Coverage Status](https://coveralls.io/repos/github/savsgio/govaluate/badge.svg?branch=master)](https://coveralls.io/github/savsgio/govaluate?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/savsgio/govaluate)](https://goreportcard.com/report/github.com/savsgio/govaluate)
+[![GoDoc](https://godoc.org/github.com/savsgio/govaluate?status.svg)](https://godoc.org/github.com/savsgio/govaluate)
+[![GitHub release](https://img.shields.io/github/release/savsgio/govaluate.svg)](https://github.com/savsgio/govaluate/releases)
 
 Provides support for evaluating arbitrary C-like artithmetic/string expressions.
 
