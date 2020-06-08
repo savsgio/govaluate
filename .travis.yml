@@ -1,27 +1,38 @@
 language: go
-sudo: false
-go:
-  - 1.10.x
-  - 1.11.x
-  - 1.12.x
-  - tip
-
-env:
-  - GOVALUATE_TORTURE_TEST=true
 
 os:
   - linux
   - osx
 
-before_install:
+go:
+  - 1.14.x
+  - 1.13.x
+  - 1.12.x
+  - 1.11.x
+  - tip
+
+env:
+  - GOVALUATE_TORTURE_TEST=true
+
+before_script:
   - go get -u -v github.com/mattn/goveralls
+  - go get -t -v ./...
 
 script:
-  # build test for supported platforms
-  - GOOS=linux go build
-  - GOOS=darwin go build
-  - GOOS=freebsd go build
-  - GOOS=windows go build
-  - GOARCH=386 go build
+  - go test -v -cover -race ./... -coverprofile=.coverprofile
 
-  - $GOPATH/bin/goveralls -v -service=travis-ci
+  # send coverage
+  - $HOME/gopath/bin/goveralls -coverprofile=.coverprofile -service=travis-ci
+
+jobs:
+  allow_failures:
+    - go: tip
+
+  include:
+    - stage: cross compilation
+      script:
+        - GOOS=linux go build
+        - GOOS=darwin go build
+        - GOOS=freebsd go build
+        - GOOS=windows go build
+        - GOARCH=386 go build
